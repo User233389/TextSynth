@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "MgzAP/R/tQU=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\takah\\Desktop\\source\\repos\\TextSynth\\TextSynth\\TextSynth.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\takah\\.nuget\\packages\\htmlagilitypack\\1.12.4\\htmlagilitypack.1.12.4.nupkg.sha512",
+    "C:\\Users\\takah\\.nuget\\packages\\system.speech\\9.0.10\\system.speech.9.0.10.nupkg.sha512"
+  ],
+  "logs": []
+}
