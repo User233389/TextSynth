@@ -1,0 +1,86 @@
+﻿<Window x:Class="TextSynth.SettingsDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TextSynth"
+        mc:Ignorable="d"
+        Title="設定" Height="659" Width="1023" Loaded="Window_Loaded" ShowInTaskbar="False">
+    <Grid>
+        <TabControl x:Name="SettingTabControl" TabStripPlacement="Left" Margin="0,0,0,85">
+            <TabItem Header="一般">
+                <Grid Margin="0,0,0,3">
+                    <ScrollViewer Margin="0,10,10,10">
+                        <StackPanel Height="511" Width="704" VerticalAlignment="Top" Margin="0,10,0,0">
+                            <TextBlock TextWrapping="Wrap" Text="一般" FontSize="22" Height="50" Width="696"/>
+                            <TextBlock TextWrapping="Wrap" FontWeight="Bold" Height="25" Width="696"><Run Language="ja-jp" Text="起動時に使用する音声:"/></TextBlock>
+                            <StackPanel Height="195" Width="696">
+                                <RadioButton x:Name="DefaltVoiceRadioButton" Content="既定の音声"/>
+                                <RadioButton x:Name="MaleVoiceRadioButton" Content="女性"/>
+                                <RadioButton x:Name="FemaleRadioButton" Content="男性"/>
+                                <RadioButton x:Name="NuturalRadionButton" Content="ナチュラル" Margin="0,0,0,10"/>
+                                <Border BorderBrush="Black" BorderThickness="1" CornerRadius="5,5,5,5" Background="#FF6DCAEA">
+                                    <TextBlock TextWrapping="Wrap" Margin="10,10,10,10" Foreground="Black" Text="選択した音声がインストールされていない場合、ほかの音声が使用されることがあります。"/>
+                                </Border>
+                            </StackPanel>
+                            <TextBlock TextWrapping="Wrap" FontWeight="Bold" Height="25" Width="696"><Run Language="ja-jp" Text="起動時に行う動作:"/></TextBlock>
+                            <CheckBox x:Name="StartOfRecoradingChrckBox" Content="起動時に録音を開始する" HorizontalAlignment="Stretch" Margin="0,0,0,10"/>
+                            <TextBlock TextWrapping="Wrap" FontWeight="Bold" Height="25" Width="696"><Run Language="ja-jp" Text="既定のテキストボックスのフォント:"/></TextBlock>
+                            <Label x:Name="FontNameLabel" Content="フォント名:" Height="20" Width="696"/>
+                            <Label x:Name="FontSizeLabel" Content="フォントサイズ:" Height="20" Width="696"/>
+                            <Button Content="変更" Width="102" Margin="0,10,0,10" Click="Button_Click_1"/>
+                            <Border BorderBrush="Black" BorderThickness="1" CornerRadius="5,5,5,5" Background="#FF6DCAEA" Height="41" Width="696">
+                                <TextBlock TextWrapping="Wrap" Margin="10,10,10,10" Foreground="Black"><Run Language="ja-jp" Text="メニューから「テキスト」→「テキストボックスのフォントを変更」を選択することで既定のフォントを変更することができます。"/></TextBlock>
+                            </Border>
+                        </StackPanel>
+                    </ScrollViewer>
+                </Grid>
+            </TabItem>
+            <TabItem Header="リセット">
+                <Grid Margin="0,0,0,3">
+                    <StackPanel Margin="0,10,10,10">
+                        <StackPanel Height="511" Width="704" Margin="0,10,0,0">
+                            <TextBlock TextWrapping="Wrap" Text="リセット" FontSize="22" Height="50" Width="696"/>
+                            <TextBlock TextWrapping="Wrap" FontWeight="Bold" Height="25" Width="696" Text="初期化"/>
+                            <Label Content="TextSynthを初回起動時の状態にリセット" Height="20" Width="696"/>
+                            <Button Content="リセット" Width="102" Margin="0,10,0,10" Click="Button_Click"/>
+                            <Border BorderBrush="Black" BorderThickness="1" CornerRadius="5,5,5,5" Background="#FFCCEA6D" Height="41" Width="696">
+                                <TextBlock TextWrapping="Wrap" Margin="10,10,10,10" Foreground="Black"><Run Language="ja-jp" Text="TextSynthで変更した設定を初回起動時の状態にリセットします。この操作は元に戻すことができません。"/><LineBreak/><Run Language="ja-jp"/></TextBlock>
+                            </Border>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <StatusBar x:Name="StatusBar1" RenderTransformOrigin="0.5,0.5" Height="80" VerticalAlignment="Bottom">
+            <StatusBar.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </StatusBar.RenderTransform>
+            <Button x:Name="CancellButton" Content="キャンセル" RenderTransformOrigin="0.5,0.5" Width="156" IsCancel="True" FontSize="14" HorizontalAlignment="Center" VerticalContentAlignment="Center" Click="CancellButton_Click" >
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button x:Name="YesButton" Content="適用" RenderTransformOrigin="0.5,0.5" Width="156" FontSize="14" HorizontalAlignment="Center" VerticalContentAlignment="Center" Click="YesButton_Click" >
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+        </StatusBar>
+    </Grid>
+</Window>

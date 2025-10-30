@@ -1,0 +1,49 @@
+﻿<Window x:Name="SelectWebsiteDialogWindow" x:Class="TextSynth.SelectWebSiteDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TextSynth"
+        mc:Ignorable="d"
+        Title="WEBサイトを選択..." Height="348" Width="510" ShowInTaskbar="False"
+        Loaded="SelectWebsiteDialogWindow_Loaded"
+        Closing="SelectWebsiteDialogWindow_Closing" VerticalAlignment="Bottom" ResizeMode="NoResize">
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" Margin="25,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="330" FontSize="18"><Run Text="読み込む"/><Run Text="W"/><Run Language="ja-jp" Text="EB"/><Run Text="サイト"/><Run Text="を選択してください"/></TextBlock>
+        <StatusBar RenderTransformOrigin="0.5,0.5" Height="80" VerticalAlignment="Bottom">
+            <StatusBar.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </StatusBar.RenderTransform>
+            <Button x:Name="CancellButton" Content="キャンセル" RenderTransformOrigin="0.5,0.5" Width="156" IsCancel="True" Click="CancellButton_Click" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button x:Name="YesButton" Content="読み込み" RenderTransformOrigin="0.5,0.5" Width="156" Click="Button_Click" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Center" >
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+        </StatusBar>
+        <Label Content="URL:" HorizontalAlignment="Left" Margin="25,63,0,0" VerticalAlignment="Top" Width="112"/>
+        <TextBox x:Name="WebsiteURLTextBox" Margin="25,90,25,0" VerticalAlignment="Top" Text="https://"/>
+        <TextBlock x:Name="URLErrorLabel" HorizontalAlignment="Center" TextWrapping="Wrap" Text="URLを空にすることはできません。" VerticalAlignment="Top" Width="447" Height="37" Margin="0,136,0,0" Foreground="#FFEDB742"/>
+        <ProgressBar x:Name="WebSiteReadProgressBar" HorizontalAlignment="Left" Height="8" Margin="32,186,0,0" VerticalAlignment="Top" Width="453" Value="40" IsIndeterminate="True"/>
+
+    </Grid>
+</Window>

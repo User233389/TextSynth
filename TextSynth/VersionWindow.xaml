@@ -1,0 +1,46 @@
+﻿<Window x:Name="VersionWindow1" x:Class="TextSynth.VersionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TextSynth"
+        Loaded="VersionWindow1_Loaded"
+        mc:Ignorable="d"
+        Title="TextSynthについて" Height="360" Width="535" WindowStartupLocation="CenterOwner" ResizeMode="NoResize" ShowInTaskbar="False">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="51*"/>
+            <ColumnDefinition Width="56*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock HorizontalAlignment="Left" Margin="83,34,0,0" TextWrapping="Wrap" Text="TextSynth" VerticalAlignment="Top" Height="55" Width="158" FontSize="36"/>
+        <Image HorizontalAlignment="Left" Height="55" Margin="23,34,0,0" VerticalAlignment="Top" Width="55" Source="/Audio Wave.png"/>
+        <TextBlock x:Name="VersionLabel" HorizontalAlignment="Left" Margin="83,89,0,0" TextWrapping="Wrap" Text="Version" VerticalAlignment="Top" Width="137"/>
+        <StatusBar RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2" Height="80" VerticalAlignment="Bottom">
+            <StatusBar.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </StatusBar.RenderTransform>
+            <Button Content="OK" RenderTransformOrigin="0.5,0.5" Width="156" Click="Button_Click" IsCancel="True" FontSize="14" >
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.499"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+        </StatusBar>
+        <TextBlock HorizontalAlignment="Left" Margin="83,110,0,0" TextWrapping="Wrap" Text="Cotton Tofu" VerticalAlignment="Top" Height="19" Width="319" Grid.ColumnSpan="2"/>
+        <TextBlock HorizontalAlignment="Left" Margin="83,137,0,0" TextWrapping="Wrap" Text="サードパーティ製のライブラリ:" VerticalAlignment="Top" Height="18" Width="319" FontWeight="Bold" Grid.ColumnSpan="2"/>
+        <TextBlock HorizontalAlignment="Left" Margin="83,155,0,0" TextWrapping="Wrap" Text="Fluent Design For WPF" VerticalAlignment="Top" Height="18" Width="149"/>
+        <TextBlock HorizontalAlignment="Left" Margin="241,155,0,0" TextWrapping="Wrap" Text="System.Speach.Synthesis" VerticalAlignment="Top" Height="18" Width="193" Grid.ColumnSpan="2"/>
+        <TextBlock HorizontalAlignment="Left" Margin="83,178,0,0" TextWrapping="Wrap" Text="HtmlAgilityPack" VerticalAlignment="Top" Height="18" Width="126"/>
+        <TextBlock HorizontalAlignment="Left" Margin="241,178,0,0" TextWrapping="Wrap" Text="System.Speech.Recognition" VerticalAlignment="Top" Height="18" Width="193" Grid.ColumnSpan="2"/>
+
+    </Grid>
+</Window>
